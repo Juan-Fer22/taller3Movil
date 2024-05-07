@@ -25,7 +25,14 @@ class MainActivity : AppCompatActivity() {
         binding.LoginButton.setOnClickListener {
             signInUser(binding.emailText.text.toString(), binding.passwordText.text.toString())
         }
+
+        binding.registro.setOnClickListener {
+            intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
+
+
 
     private fun signInUser(email: String, password: String) {
         if (validateForm(email, password)) {
